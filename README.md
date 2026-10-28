@@ -11,3 +11,7 @@ Einseitige Kampagnenseite für #WirStehenZusammen. Alles steckt in einer Datei (
 - Versprechen-Formular an den Server anbinden (speichert in der Vorschau nichts)
 - Impressum und Datenschutz rechtlich klären
 - Alle Zahlen, Treffpunkte und Kontakte sind Beispieldaten
+
+## Linkvorschau & Teilen
+- Vorschaubild: `og.png` (1200 × 630). Bei eigener Domain `og:url` und `og:image` im `<head>` von `index.html` anpassen.
+- Nach einer Zusage erscheinen Teilen-Buttons (WhatsApp, Telegram, Link kopieren, auf dem Handy zusätzlich „Teilen…“).
