@@ -333,6 +333,23 @@ footer a:hover{text-decoration:underline}
 .consent .no{background:transparent;color:#fff}
 .linkbtn{font:inherit;font-weight:600;color:#fff;background:none;border:0;padding:0;cursor:pointer}
 .linkbtn:hover{text-decoration:underline}
+/* ===== Teilen ===== */
+.share-box{display:grid;gap:10px;min-width:0;background:rgba(0,0,0,.2);padding:16px}
+.share-lbl{font-size:15px;font-weight:600;color:#fff}
+.share-main{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font-family:var(--display);font-weight:800;font-size:18px;line-height:1;padding:15px 16px 13px;background:var(--hot);color:#fff;border:0;cursor:pointer}
+.share-main:hover{background:var(--berry)}
+.share-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.sbtn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-width:0;font-family:var(--display);font-weight:700;font-size:14px;line-height:1.1;padding:12px 6px 10px;background:#fff;color:var(--navy);border:0;cursor:pointer;text-decoration:none;text-align:center}
+.sbtn span{overflow-wrap:anywhere}
+.sbtn:hover{background:var(--hot);color:#fff}
+.share-main svg,.sbtn svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.share-url{font-size:13px;overflow-wrap:anywhere;color:#fff}
+/* auf hellem Grund (Infoliste der Stadtseite) */
+.infolist .share-box{width:100%;max-width:360px;background:transparent;padding:0}
+.infolist .sbtn{background:var(--navy);color:#fff}
+.infolist .sbtn:hover{background:var(--hot)}
+.infolist .share-url{color:var(--ink)}
+@media (max-width:420px){.sbtn{font-size:13px;padding:11px 4px 9px}}
 </style>
 </head>
 <body>
@@ -623,11 +640,11 @@ footer a:hover{text-decoration:underline}
   function shareHTML(c,pledged,label){
     var s=shareData(c,pledged), e=encodeURIComponent;
     return '<div class="share-box">'+(label?'<p class="share-lbl">'+label+'</p>':'')+
+      (navigator.share?'<button type="button" class="share-main" data-share-native="'+c.id+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><path d="M5 13v7h14v-7"/></svg>Weitersagen</button>':'')+
       '<div class="share-row">'+
-        (navigator.share?'<button type="button" class="sbtn" data-share-native="'+c.id+'">Teilen…</button>':'')+
-        '<a class="sbtn" href="https://wa.me/?text='+e(s.text+' '+s.url)+'" target="_blank" rel="noopener">WhatsApp</a>'+
-        '<a class="sbtn" href="https://t.me/share/url?url='+e(s.url)+'&text='+e(s.text)+'" target="_blank" rel="noopener">Telegram</a>'+
-        '<button type="button" class="sbtn" data-share-copy="'+c.id+'">Link kopieren</button>'+
+        '<a class="sbtn" href="https://wa.me/?text='+e(s.text+' '+s.url)+'" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span>WhatsApp</span></a>'+
+        '<a class="sbtn" href="https://t.me/share/url?url='+e(s.url)+'&text='+e(s.text)+'" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l18-8-7 18-3-7z"/></svg><span>Telegram</span></a>'+
+        '<button type="button" class="sbtn" data-share-copy="'+c.id+'" title="Link kopieren"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span>Link kopieren</span></button>'+
       '</div><span class="share-url sel" hidden>'+esc(s.url)+'</span></div>';
   }
   document.addEventListener('click',function(e){
@@ -635,7 +652,7 @@ footer a:hover{text-decoration:underline}
     if(n){var c=C.filter(function(x){return x.id===n.getAttribute('data-share-native')})[0];navigator.share(shareData(c,true)).catch(function(){});return}
     var k=e.target.closest&&e.target.closest('[data-share-copy]');
     if(k){var c2=C.filter(function(x){return x.id===k.getAttribute('data-share-copy')})[0],s2=shareData(c2,true),u=k.closest('.share-box').querySelector('.share-url');
-      var ok=function(){k.textContent='Kopiert ✓';setTimeout(function(){k.textContent='Link kopieren'},1600)};
+      var sp=k.querySelector('span'),ok=function(){sp.textContent='Kopiert ✓';setTimeout(function(){sp.textContent='Link kopieren'},1600)};
       var fb=function(){u.hidden=false;var r=document.createRange();r.selectNodeContents(u);var sel=getSelection();sel.removeAllRanges();sel.addRange(r)};
       try{navigator.clipboard.writeText(s2.text+' '+s2.url).then(ok,fb)}catch(x){fb()}}
   });
