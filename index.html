@@ -20,6 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- Bei eigener Domain: og:url und og:image auf die neue Adresse ändern -->
 <style>
+[hidden]{display:none!important}
 /* Schriften eingebettet (keine Verbindung zu Google) – OFL-lizenziert */
 @font-face{font-family:'League Spartan';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/league-spartan-latin-500-normal.woff2) format('woff2')}
 @font-face{font-family:'League Spartan';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/league-spartan-latin-600-normal.woff2) format('woff2')}
@@ -401,9 +402,11 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
 @media (max-width:560px){.vid-stop{top:10px;font-size:12px;padding:6px 9px 5px}}
 .meet .card.berry p{color:#fff}
 .meet .card.berry .ph{background:rgba(26,35,80,.45);color:#fff;border-color:#fff}
+.draftbar{background:#f0de3a;color:#1a1f45;font-size:14px;font-weight:600;padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px));text-align:center}.draftbar a{color:#1a1f45;font-weight:700}
 </style>
 </head>
 <body>
+
 
 <a class="skip" href="#start">Zum Inhalt springen</a>
 <header class="top">
@@ -422,7 +425,7 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
     <div class="photo" style="background-image:url('img/demo-blockade.jpg')">
       <div class="bgslot" data-vimeo-bg="909677587" aria-hidden="true"></div>
       <a class="vid-cta" href="#teaser" id="to-teaser"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="currentColor"/></svg>Teaser mit Ton</a>
-      <span class="ph dark vid-ph">Übergangs-Video</span>
+      
     </div>
     <div class="bars">
       <div class="bar bar-1"><div class="wrap"><h1>Wir stehen zusammen.</h1></div></div>
@@ -444,10 +447,10 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
           <h2 style="margin-top:14px">Wo bist du dabei?</h2>
           <p class="p-intro">Such deine Stadt und sag zu. Die Zahlen sind für alle sichtbar, Namen nie.</p>
         </div>
-        <div class="total">
-          <b id="total">18.875</b>
+        <div class="total" hidden>
+          <b id="total">0</b>
           <span>Versprechen<br>bundesweit</span>
-          <span class="ph dark">Beispielzahlen</span>
+          
         </div>
       </div>
 
@@ -456,7 +459,7 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
           <svg id="map" viewBox="0 0 520 680" role="group" aria-label="Deutschlandkarte mit allen Städten, in denen wir aktiv sind"></svg>
           <div class="maplegend">
             <span><i class="sq own"></i>Städte, in denen wir aktiv sind</span>
-            <span class="ph dark">Orte symbolisch</span>
+            
           </div>
         </div>
 
@@ -472,7 +475,7 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
         </div>
       </div>
 
-      <p class="p-quote">„Wenn der Sozialstaat angegriffen wird, gehe ich mit auf die Straße. Wir stehen zusammen.“ <span class="ph dark">Wortlaut Platzhalter</span></p>
+      <p class="p-quote">„Wenn der Sozialstaat angegriffen wird, gehe ich mit auf die Straße. Wir stehen zusammen.“ </p>
     </div>
   </section>
 
@@ -503,7 +506,7 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
         <article class="step">
           <span class="when">Herbst 2026</span>
           <h3>Protestkaskade</h3>
-          <p>Demos und Aktionen in vielen Städten, eine nach der anderen. <span class="ph">Termine folgen</span></p>
+          <p>Demos und Aktionen in vielen Städten, eine nach der anderen. </p>
         </article>
         <article class="step">
           <span class="when">Laufend</span>
@@ -532,27 +535,12 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
         <div class="way">
           <span class="kicker">Im Kiez</span>
           <h3>Nachbarschaft mobilisieren</h3>
-          <p>Flyer verteilen, Infostände machen, Leute zu den Aktionen holen. Material gibt's weiter unten.</p>
+          <p>Flyer verteilen, Infostände machen, Leute zu den Aktionen holen.</p>
         </div>
         <div class="way">
           <span class="kicker">In der Stadt</span>
           <h3>Bündnis aufbauen</h3>
           <p>Gewerkschaften, Initiativen und Vereine vor Ort an einen Tisch holen.</p>
-        </div>
-      </div>
-      <div class="meet">
-        <div class="card on-dark">
-          <span class="tag" style="justify-self:start">Erstes Treffen</span>
-          <p class="when">[Datum, Zeit, Ort]</p>
-          <p>Komm zum ersten Treffen, Sozialratschlag oder Stammtisch in deiner Stadt. Die Termine stehen bei den lokalen Gruppen auf der Karte.</p>
-          <span class="ph" style="justify-self:start">Platzhalter</span>
-        </div>
-        <div class="card berry on-dark" id="telegram">
-          <span class="tag navy" style="justify-self:start">Telegram</span>
-          <p class="when">Bundesweiter Kanal</p>
-          <p>Termine und Aufrufe direkt aufs Handy.</p>
-          <a class="btn btn-navy" href="#telegram" style="justify-self:start">Kanal beitreten</a>
-          <span class="ph" style="justify-self:start">Link aus QR-Code eintragen</span>
         </div>
       </div>
     </div>
@@ -562,33 +550,11 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
     <div class="wrap">
       <div class="t-head"><h2 id="teaser-h">Teaser</h2></div>
       <div class="player" data-vimeo="909677587"><button type="button" class="vplay"><span class="pbtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z" fill="#fff"/></svg></span><b>Video abspielen</b><small>Mit dem Klick lädst du das Video von Vimeo. Dabei werden Daten an Vimeo (USA) übertragen.</small></button></div>
-      <p class="t-note"><span class="ph">Übergangs-Video</span> Bis unser eigener Teaser fertig ist, zeigen wir hier „Wir fahren zusammen – Wir streiken zusammen“. Video über <a href="https://vimeo.com/909677587">Vimeo</a>.</p>
+      <p class="t-note"> Bis unser eigener Teaser fertig ist, zeigen wir hier „Wir fahren zusammen – Wir streiken zusammen“. Video über <a href="https://vimeo.com/909677587">Vimeo</a>.</p>
     </div>
   </section>
 
-  <section class="material" id="material">
-    <div class="wrap">
-      <h2>Material</h2>
-      <div class="mats">
-        <article class="mat">
-          <div class="thumb">#WirStehen&shy;Zusammen</div>
-          <div>
-            <h3>Kampagnen-Flyer</h3>
-            <p>A4, Vorder- und Rückseite. Kopiervorlage mit Feld für euren lokalen Termin und QR-Code zum Telegram-Kanal.</p>
-            <div class="acts"><a class="btn btn-navy" href="material/WSZ_Flyer.pdf">PDF öffnen</a><span class="ph">Datei auf Server ablegen</span></div>
-          </div>
-        </article>
-        <article class="mat">
-          <div class="thumb berry logo-thumb"><img src="img/logo.webp" alt="" width="150" height="150" loading="lazy"></div>
-          <div>
-            <h3>Logo &amp; Sharepics</h3>
-            <p>Das Kampagnenlogo als PNG und Vorlagen für Instagram-Posts und Storys. Einfach euren Ort und Termin eintragen und teilen.</p>
-            <div class="acts"><a class="btn btn-navy" href="material/WSZ_Logo_Sharepics.zip">Paket öffnen</a><span class="ph">Sharepics folgen</span></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+  
 
   <section class="closer" style="background-image:url('img/demo-verdi.jpg')">
     <div class="band">
@@ -600,14 +566,14 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
   </section>
 
   <section class="wrap">
-    <div class="legal" id="impressum"><div class="legalbox"><h3>Impressum <span class="ph">Platzhalter</span></h3><p>Angaben gemäß § 5 DDG folgen, sobald die rechtliche Trägerschaft geklärt ist: verantwortliche Person bzw. Organisation, ladungsfähige Anschrift, Kontakt.</p></div></div>
-    <div class="legal" id="datenschutz"><div class="legalbox"><h3>Datenschutz <span class="ph">Platzhalter</span></h3><p>Die Datenschutzerklärung folgt. Sie muss mindestens Verantwortliche, Zweck und Rechtsgrundlage der Versprechen-Daten, Speicherdauer, Hosting und Betroffenenrechte abdecken sowie die Einbettung des Vimeo-Videos.</p></div></div>
+    <div class="legal" id="impressum"><div class="legalbox"><h3>Impressum </h3><p>Angaben gemäß § 5 DDG folgen, sobald die rechtliche Trägerschaft geklärt ist: verantwortliche Person bzw. Organisation, ladungsfähige Anschrift, Kontakt.</p></div></div>
+    <div class="legal" id="datenschutz"><div class="legalbox"><h3>Datenschutz </h3><p>Die Datenschutzerklärung folgt. Sie muss mindestens Verantwortliche, Zweck und Rechtsgrundlage der Versprechen-Daten, Speicherdauer, Hosting und Betroffenenrechte abdecken sowie die Einbettung des Vimeo-Videos.</p></div></div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Wir stehen zusammen · Kontakt: <span style="user-select:all;font-weight:600;color:#fff">kontakt@wirstehenzusammen.de</span> <span class="ph dark">Platzhalter</span></span>
+    <span>© 2026 Wir stehen zusammen · Kontakt: <span style="user-select:all;font-weight:600;color:#fff">kontakt@wirstehenzusammen.de</span> </span>
     <nav aria-label="Rechtliches"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><button type="button" class="linkbtn" data-consent-open>Video-Einstellungen</button><a href="#start">Nach oben</a></nav>
   </div>
 </footer>
@@ -629,37 +595,20 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
   function el(tag,a,p){var e=document.createElementNS(NS,tag);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
   function fmt(n){return n.toLocaleString('de-DE')}
 
-  /* Städte. Treffpunkte und Zahlen sind Beispieldaten. */
+  /* Städte */
+  var DRAFT=document.documentElement.hasAttribute('data-entwurf');
   var C=[
-    {n:'Dresden',lon:13.74,lat:51.05,tp:'Theaterplatz',c:1840,side:'r'},
-    {n:'Magdeburg',lon:11.63,lat:52.13,tp:'Domplatz',c:1215,side:'r'},
-    {n:'Berlin',lon:13.40,lat:52.52,tp:'Treffpunkt folgt',c:2960,side:'r'},
-    {n:'Hamburg',lon:9.99,lat:53.55,tp:'Treffpunkt folgt',c:2110,side:'r'},
-    {n:'Leipzig',lon:12.37,lat:51.34,tp:'Treffpunkt folgt',c:1530,side:'r'},
-    {n:'Köln',lon:6.96,lat:50.94,tp:'Treffpunkt folgt',c:1495,side:'r'},
-    {n:'München',lon:11.58,lat:48.14,tp:'Treffpunkt folgt',c:1380,side:'r'},
-    {n:'Frankfurt',lon:8.68,lat:50.11,tp:'Treffpunkt folgt',c:990,side:'r'},
-    {n:'Stuttgart',lon:9.18,lat:48.78,tp:'Treffpunkt folgt',c:760,side:'r'},
-    {n:'Hannover',lon:9.73,lat:52.37,tp:'Treffpunkt folgt',c:705,side:'r'},
-    {n:'Bremen',lon:8.80,lat:53.08,tp:'Treffpunkt folgt',c:540,side:'l'},
-    {n:'Dortmund',lon:7.47,lat:51.51,tp:'Treffpunkt folgt',c:610,side:'r'},
-    {n:'Nürnberg',lon:11.08,lat:49.45,tp:'Treffpunkt folgt',c:480,side:'r'},
-    {n:'Chemnitz',lon:12.92,lat:50.83,tp:'Treffpunkt folgt',c:395,side:'b'},
-    {n:'Erfurt',lon:11.03,lat:50.98,tp:'Treffpunkt folgt',c:360,side:'l'},
-    {n:'Rostock',lon:12.10,lat:54.09,tp:'Treffpunkt folgt',c:330,side:'r'},
-    {n:'Bielefeld',lon:8.53,lat:52.02,tp:'Treffpunkt folgt',c:275,side:'r'},
-    {n:'Mainz',lon:8.27,lat:50.0,tp:'Treffpunkt folgt',c:250,side:'l'},
-    {n:'Freiburg',lon:7.85,lat:47.99,tp:'Treffpunkt folgt',c:420,side:'r'},
-    {n:'Göttingen',lon:9.93,lat:51.54,tp:'Treffpunkt folgt',c:230,side:'r'}
+    {n:'Dresden',echt:1,lon:13.74,lat:51.05,tp:'',c:0,side:'r'},
+    {n:'Magdeburg',echt:1,lon:11.63,lat:52.13,tp:'',c:0,side:'r'},
   ];
   C.forEach(function(c){c.id=c.n.toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue')});
-  C.sort(function(a,b){return b.c-a.c});
+  C.sort(function(a,b){return b.c-a.c||a.n.localeCompare(b.n,'de')});
 
   var mine=null; try{mine=localStorage.getItem('wsz-pledge')}catch(e){}
   C.forEach(function(c){if(c.id===mine)c.c+=1});
 
   var totalEl=document.getElementById('total');
-  function renderTotal(){totalEl.textContent=fmt(C.reduce(function(s,c){return s+c.c},0))}
+  function renderTotal(){var n=C.reduce(function(s,c){return s+c.c},0);totalEl.textContent=fmt(n);totalEl.parentNode.hidden=!n}
 
   /* Karte */
   var map=document.getElementById('map');
@@ -712,7 +661,7 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
     var h='<span class="rk">'+(i+1)+'</span>'+
       '<span class="nm">'+c.n+'</span>'+
       '<button type="button" class="go" data-go="'+c.id+'"'+(open===c.id?' aria-expanded="true"':'')+'>'+(isMine?'Du bist dabei ✓':'Ich bin dabei')+'</button>'+
-      '<span class="sub">'+c.tp+' · <b>'+fmt(c.c)+'</b> dabei</span>';
+      '<span class="sub">'+[c.tp?esc(c.tp):'',c.c?'<b>'+fmt(c.c)+'</b> dabei':''].filter(Boolean).join(' · ')+'</span>';
     if(c.id===sel){
       h+='<div class="detail">';
       if(open===c.id&&!isMine){
@@ -731,8 +680,6 @@ a,button,input,select,label,summary,[role="link"]{touch-action:manipulation}
       } else {
         if(isMine&&thanks[c.id]) h+='<span class="note">Danke, '+esc(thanks[c.id])+'. Du bist für '+c.n+' eingetragen. Wir schreiben dir, wenn es losgeht.</span>';
         if(isMine) h+=shareHTML(c,true,'Schick es an deine Kolleg*innen:');
-        h+='<span class="meta">Nächste Aktion: [Datum, Zeit] <span class="ph dark">Platzhalter</span></span>'+
-          '<div class="chips"><a href="#versprechen">Instagram @wsz_'+c.id+'</a><a href="#versprechen">Telegram</a><a href="#versprechen">Pressekontakt</a></div>';
       }
       h+='</div>';
     }

@@ -18,3 +18,7 @@ Einseitige Kampagnenseite für #WirStehenZusammen. Eine Seite (`index.html`), Bi
 
 ## Schriften
 League Spartan und Figtree liegen in `fonts/` (OFL-Lizenz). Es gibt keine Verbindung zu Google Fonts.
+
+## Öffentlich und Entwurf
+- `index.html` = öffentlich: nur Dresden und Magdeburg, Zusagen ab 0 (Zahl erscheint erst ab 1), keine Platzhalter. Treffen/Telegram und Material erscheinen erst, wenn es sie wirklich gibt.
+- `entwurf.html` = für das Team: alle Beispieldaten und Platzhalter, gelbe Leiste oben, `noindex`.
