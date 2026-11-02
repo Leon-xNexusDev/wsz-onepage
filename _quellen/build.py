@@ -74,7 +74,7 @@ def wrap(t, draft):
 
 
 def assets(t):
-    for sub in ('img', 'fonts'):
+    for sub in ('img', 'fonts', 'js'):
         os.makedirs(os.path.join(REPO, sub), exist_ok=True)
         for fn in os.listdir(os.path.join(ROOT, sub)):
             shutil.copy(os.path.join(ROOT, sub, fn), os.path.join(REPO, sub, fn))

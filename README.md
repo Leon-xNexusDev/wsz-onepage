@@ -37,3 +37,6 @@ Das erzeugt beide Fassungen neu (nur Python 3, keine weiteren Pakete).
 - **Nur im Entwurf:** alles zwischen `<!--entwurf-->` und `<!--/entwurf-->`
 - **Material:** `<!--mat:material/DATEI-->…<!--/mat-->` erscheint öffentlich, sobald die Datei im Repo liegt
 - **Platzhalter-Markierungen** (`<span class="ph">…</span>`) werden öffentlich automatisch entfernt
+
+## Fremder Code
+`js/vimeo-player.min.js`: offizielle Vimeo-Player-Bibliothek @vimeo/player 2.24.0 (MIT-Lizenz, © Vimeo). Liegt lokal, damit beim Laden keine Verbindung zu einem fremden CDN entsteht.
