@@ -15,3 +15,6 @@ Einseitige Kampagnenseite für #WirStehenZusammen. Alles steckt in einer Datei (
 ## Linkvorschau & Teilen
 - Vorschaubild: `og.png` (1200 × 630). Bei eigener Domain `og:url` und `og:image` im `<head>` von `index.html` anpassen.
 - Nach einer Zusage erscheinen Teilen-Buttons (WhatsApp, Telegram, Link kopieren, auf dem Handy zusätzlich „Teilen…“).
+
+## Schriften
+League Spartan und Figtree sind direkt in `index.html` eingebettet (OFL-Lizenz). Es gibt keine Verbindung zu Google Fonts.
