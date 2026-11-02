@@ -1,6 +1,6 @@
 # Wir stehen zusammen – Onepager
 
-Einseitige Kampagnenseite für #WirStehenZusammen. Alles steckt in einer Datei (`index.html`), Logo und Fotos sind eingebettet.
+Einseitige Kampagnenseite für #WirStehenZusammen. Eine Seite (`index.html`), Bilder in `img/`, Schriften in `fonts/`.
 
 **Inhalt:** Kopfbereich mit stummer Teaser-Schleife, Protestversprechen mit Deutschlandkarte und Rangliste, „Es reicht!“, Plan, Mitmachen, Teaser mit Ton, Material, Impressum/Datenschutz (Platzhalter).
 
@@ -17,4 +17,4 @@ Einseitige Kampagnenseite für #WirStehenZusammen. Alles steckt in einer Datei (
 - Nach einer Zusage erscheinen Teilen-Buttons (WhatsApp, Telegram, Link kopieren, auf dem Handy zusätzlich „Teilen…“).
 
 ## Schriften
-League Spartan und Figtree sind direkt in `index.html` eingebettet (OFL-Lizenz). Es gibt keine Verbindung zu Google Fonts.
+League Spartan und Figtree liegen in `fonts/` (OFL-Lizenz). Es gibt keine Verbindung zu Google Fonts.
